@@ -18,28 +18,26 @@ class NwProducts():
         finally:
             self.result = my_db.docker_Northwind.commit()
             # close connection
-            self.result = my_db.docker_Northwind.commit()
+            self.result = my_db.docker_Northwind.close()
 
     def insert(self):
         try:
-            self.result = my_db.cursor.execute = ("insert into Northwind.dbo.Students (StudentID, first_name, last_name) values (?, ?, ?), 1,'omid','Ayoobe'")
-        # sql = ("insert into Northwind.dbo.Students (StudentID, first_name, last_name) values (?, ?, ?)")
-        # val = [(1,'omid','Ayoobe'),
-        #        (2, 'james', 'tiger')]
-        # self.result = my_db.cursor.executemany(sql,val)
-        # my_db.cursor.executemany.commit()
+
+            self.result = my_db.cursor.execute("INSERT INTO Students(StudentID, first_name, last_name) values (?, ?, ?);", 1 , 'omid', 'ayoobe')
+
         except:
-            print("something went wrong! check your code.")
+            print("ERROR!!! something went wrong! check your code.")
 
         finally:
             self.result = my_db.docker_Northwind.commit()
             # close connection
-            self.result = my_db.docker_Northwind.commit()
+            self.result = my_db.docker_Northwind.close()
 
 
     def read_db (self):
+
         try:
-            self.result = my_db.cursor.execute = ('SELECT * FROM Northwind.dbo.Students')
+            self.result = my_db.cursor.execute('SELECT * From Students')
 
             while True: # while loop - while the loop is true
                 column = my_db.cursor.fetchone() # culomn holds the columns and fitches each one at a time - the loop carrys on untile there is no more data left
@@ -49,6 +47,7 @@ class NwProducts():
         except:
 
             print("something went wrong! check your code.")
+
         finally:
             self.result = my_db.docker_Northwind.commit()
 
@@ -60,6 +59,3 @@ my_db.read_db()
 
 
 
-# columns = self.result.fetchall()
-#         for column in columns:
-#             print(column.(name))

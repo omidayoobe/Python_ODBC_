@@ -1,0 +1,25 @@
+def insert(self):
+----> try adding it in bulk insert
+# sql = ("insert into Northwind.dbo.Students (StudentID, first_name, last_name) values (?, ?, ?)")
+        # val = [(1,'omid','Ayoobe'),
+        #        (2, 'james', 'tiger')]
+        # self.result = my_db.cursor.executemany(sql,val)
+        # my_db.cursor.executemany.commit()
+
+
+def read(self):
+------> since we used while loop here is the for loop to read hte data
+self.result = my_db.cursor.execute = ('SELECT * Students')
+    columns = result.fetchall()
+
+    for row in rows:
+        print(row.StudentID, row.first_name, last_name)
+        print(row[0], row[1], row[2]) # if we dont know the name of the columns inside the databse, however we know it is a list we can use the indexes to pull the values
+
+        ######################while loop########################################
+
+            while True: # while loop - while the loop is true
+                column = my_db.cursor.fetchone() # culomn holds the columns and fitches each one at a time - the loop carrys on untile there is no more data left
+                if not in column: # if there is no more columns to read
+                    break # break the loop and leave
+                print(column) # otherwise print the columns
